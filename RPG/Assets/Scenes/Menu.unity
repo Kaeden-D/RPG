@@ -238,7 +238,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1725861422}
+      - m_Target: {fileID: 1725861424}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnStartGameButton
         m_Mode: 1
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1725861422}
+      - m_Target: {fileID: 1725861424}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnFindRoomButton
         m_Mode: 1
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1725861422}
+      - m_Target: {fileID: 1725861424}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnBackButton
         m_Mode: 1
@@ -1612,7 +1612,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1725861422}
+      - m_Target: {fileID: 1725861424}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnCreateButton
         m_Mode: 2
@@ -2669,7 +2669,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1725861422}
+      - m_Target: {fileID: 1725861424}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnPlayerNameValueChanged
         m_Mode: 2
@@ -3775,7 +3775,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1725861422}
+      - m_Target: {fileID: 1725861424}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnRefreshButton
         m_Mode: 1
@@ -3908,7 +3908,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1725861422}
+      - m_Target: {fileID: 1725861424}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnCreateRoomButton
         m_Mode: 1
@@ -3967,37 +3967,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1725861423}
-  - component: {fileID: 1725861422}
+  - component: {fileID: 1725861424}
+  - component: {fileID: 1725861425}
   m_Layer: 0
   m_Name: _Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1725861422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1725861421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a4fd0c37e7ff5d4ca2597b741b3369a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainScreen: {fileID: 1605742955}
-  createRoomScreen: {fileID: 1197689311}
-  lobbyScreen: {fileID: 693381043}
-  lobbyBrowserScreen: {fileID: 446757870}
-  createRoomButton: {fileID: 1687524302}
-  findRoomButton: {fileID: 71873939}
-  playerListText: {fileID: 364033123}
-  roomInfoText: {fileID: 802233270}
-  startGameButton: {fileID: 71616322}
-  roomListContainer: {fileID: 477609517}
-  roomButtonPrefab: {fileID: 1595771284533788077, guid: cbeb24757ceccfb4791799e4b8c48280, type: 3}
+  m_IsActive: 1
 --- !u!4 &1725861423
 Transform:
   m_ObjectHideFlags: 0
@@ -4013,6 +3991,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1725861424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725861421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20def4526f969b74b9c0fb0e96bdec94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainScreen: {fileID: 1605742955}
+  createRoomScreen: {fileID: 1197689311}
+  lobbyScreen: {fileID: 693381043}
+  lobbyBrowserScreen: {fileID: 446757870}
+  createRoomButton: {fileID: 1687524302}
+  findRoomButton: {fileID: 71873939}
+  playerListText: {fileID: 364033123}
+  roomInfoText: {fileID: 802233270}
+  startGameButton: {fileID: 71616322}
+  roomListContainer: {fileID: 477609517}
+  roomButtonPrefab: {fileID: 1201373559936465384, guid: e2a0949d60c2041499ffb0a0f481b9c2, type: 3}
+--- !u!114 &1725861425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725861421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1768533942
 GameObject:
   m_ObjectHideFlags: 0
@@ -4179,6 +4202,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1820633972}
+  - component: {fileID: 1820633973}
+  - component: {fileID: 1820633974}
   m_Layer: 0
   m_Name: _NetworkManager
   m_TagString: Untagged
@@ -4201,6 +4226,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1820633973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820633971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3186797f282891a479e7af1518e224f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPlayers: 10
+--- !u!114 &1820633974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820633971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1856358209
 GameObject:
   m_ObjectHideFlags: 0
@@ -4420,7 +4480,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1725861422}
+      - m_Target: {fileID: 1725861424}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnBackButton
         m_Mode: 1
@@ -4947,7 +5007,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1725861422}
+      - m_Target: {fileID: 1725861424}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: OnLeaveLobbyButton
         m_Mode: 1

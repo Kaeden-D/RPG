@@ -56,6 +56,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     }
 
+    [PunRPC]
     public void ChangeScene(string sceneName)
     {
 
