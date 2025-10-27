@@ -43,6 +43,9 @@ MonoBehaviour:
   - ChangeScene
   - Heal
   - UpdateHealthBar
+  - Log
+  - GiveGold
+  - FlashDamage
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
