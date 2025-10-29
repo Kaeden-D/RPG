@@ -161,7 +161,7 @@ public class Menu : MonoBehaviourPunCallbacks, ILobbyCallbacks
         foreach (Player player in PhotonNetwork.PlayerList)
             playerListText.text += player.NickName + "\n";
         // set the room info text
-        roomInfoText.text = "<b>Room Name</b>\n";// + PhotonNetwork.CurrentRoom.Name;
+        roomInfoText.text = "<b>Room Name</b>\n" + PhotonNetwork.CurrentRoom.Name;
 
     }
 

@@ -1,7 +1,8 @@
-using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using System.Collections;
+using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerController : MonoBehaviourPun
 {
@@ -27,6 +28,9 @@ public class PlayerController : MonoBehaviourPun
     public Player photonPlayer;
     public SpriteRenderer sr;
     public Animator weaponAnim;
+
+    private bool bounce = false;
+    private float bTime;
     
     // local player
     public static PlayerController me;
@@ -37,8 +41,15 @@ public class PlayerController : MonoBehaviourPun
 
         if (!photonView.IsMine)
             return;
-        Move();
-        float mouseX = (Screen.width / 2) - Input.mousePosition.x;
+        if (!bounce)
+        {
+            Move();
+        }
+        else if(Time.time - bTime > 1)
+        {
+            bounce = false;
+        }
+            float mouseX = (Screen.width / 2) - Input.mousePosition.x;
         if (mouseX < 0)
             weaponAnim.transform.parent.localScale = new Vector3(-1, 1, 1);
         else
@@ -155,6 +166,32 @@ public class PlayerController : MonoBehaviourPun
             me = this;
         else
             rig.isKinematic = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!PhotonNetwork.IsMasterClient)
+            return;
+        if (collision.CompareTag("Transport"))
+        {
+            bounce = true;
+            bTime = Time.time;
+            if(collision.gameObject.name == "Right" || collision.gameObject.name == "Left")
+            {
+                rig.linearVelocityX *= -1;
+            }
+            if(collision.gameObject.name == "Top" || collision.gameObject.name == "Bottom")
+            {
+                rig.linearVelocityY *= -1;
+            }
+        }
+        if (collision.CompareTag("Tele"))
+        {
+            bounce = true;
+            bTime = Time.time;
+            rig.linearVelocity = new Vector2(0, 0);
+            transform.position = GameManager.instance.spawnPoints[Random.Range(0, GameManager.instance.spawnPoints.Length)].position;
+        }
     }
 
 }

@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviourPun
             // calculate the distance
             float dist = Vector3.Distance(transform.position, targetPlayer.transform.position);
             // if we're able to attack, do so
-            if (dist < attackRange && Time.time - lastAttackTime >= attackRange)
+            if (dist < attackRange && Time.time - lastAttackTime >= attackRate)
                 Attack();
             // otherwise, do we move after the player?
             else if (dist > attackRange)
@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviourPun
             foreach (PlayerController player in GameManager.instance.players)
             {
                 // calculate distance between us and the player
-                float dist = Vector2.Distance(transform.position, player.transform.position);
+                float dist = Vector2.Distance(this.transform.position, player.transform.position);
                 if (player == targetPlayer)
                 {
                     if (dist > chaseRange)
@@ -131,6 +131,14 @@ public class Enemy : MonoBehaviourPun
             PhotonNetwork.Instantiate(objectToSpawnOnDeath, transform.position, Quaternion.identity);
         // destroy the object across the network
         PhotonNetwork.Destroy(gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Transport"))
+        {
+            Die();
+        }
     }
 
 }
